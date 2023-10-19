@@ -7,6 +7,7 @@ BLACK = 'black'
 DARK_GRAY = '#1f1f1f'
 WHITE = 'white'
 
+
 class TaskListApp:
     """Task list application."""
 
@@ -167,7 +168,7 @@ class TaskListApp:
 
     def load_tasks(self):
         """Load tasks from a text file."""
-        
+
         # Ask the user to select a file to load tasks from
         file_path = filedialog.askopenfilename(
             filetypes=[("Text Files", "*.txt")])
@@ -181,6 +182,7 @@ class TaskListApp:
                         self.task_list.insert("end", task)
             except Exception as e:
                 print(f"Error loading tasks: {e}")
+
 
 def is_event_within_bbox(event, bbox, ignore_x=False):
     """Check if the event is within a given bounding box.
@@ -203,6 +205,7 @@ def is_event_within_bbox(event, bbox, ignore_x=False):
     else:
         # Check if the event's x and y coordinates are within the bounding box
         return x <= event.x <= x + width and y <= event.y <= y + height
+
 
 if __name__ == "__main__":
     # Prepare the app
