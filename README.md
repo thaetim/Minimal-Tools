@@ -29,7 +29,7 @@ A simple dark-themed task list window. Always in the foreground.
             Run, "path\to\your\pythonw.exe" "path\to\your\tasklist.py"
         return
 
-3. Run the script. Now the script will listen for the key combination specified in the .ahk script, and if so execute the `tasklist.py`
+3. Run the script. Now the script will listen for the key combination specified in the *.ahk* script, and if so execute the `tasklist.py`.
 
 I recommend also adding the *.ahk* script to Windows' autostart:
 1. WIN + R
