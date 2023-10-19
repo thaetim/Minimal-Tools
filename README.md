@@ -15,8 +15,6 @@ A simple dark-themed task list window. Always in the foreground.
 
 - **Close Application**: You can press the "Esc" key to quickly close the application.
 
-Feel free to edit the colors in the code itself.
-
 #### Requirements
 1. Install [Python 3](https://www.python.org/downloads/).
 2. Install tkinter:
@@ -44,13 +42,7 @@ You can customize the application by modifying the script. You can change the co
 
 ## License
 
-This Task List Application is open-source software available under the [MIT License](https://mit-license.org/).
-
-## Author
-
-- [Maciej Stawarz](https://github.com/thaetim)
-
-Feel free to contact the author with any questions or suggestions.
+This is an open-source software available under the [MIT License](https://mit-license.org/).
 
 #### Future developments
-Rewrite the app to use the styled `tkk`.
+Rewrite using the styled `tkk`.
