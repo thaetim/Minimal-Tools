@@ -1,7 +1,7 @@
 # MINIMAL TOOLS
 
 ## Tasklist
-A simple dark-themed task list.
+A painfully simple dark-themed task list.
 
 ## Features and Usage
 
