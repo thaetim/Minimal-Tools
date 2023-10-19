@@ -1,0 +1,4 @@
+tmp*.py
+__pycache__/
+tasklist ttk.py
+*.bat
