@@ -1,6 +1,7 @@
 import tkinter as tk
 import sys
 
+
 class Win(tk.Tk):
     """Custom window class for the task list application."""
 
@@ -19,8 +20,8 @@ class Win(tk.Tk):
         super().overrideredirect(True)
 
         # Start the window in the bottom right part of the screen
-        self._offsetx = int(0.8 * self.winfo_screenwidth())
-        self._offsety = int(0.8 * self.winfo_screenheight())
+        self._offsetx = self.winfo_screenwidth() - self.winfo_width - 200
+        self._offsety = self.winfo_screenheight() - self.winfo_height - 200
         super().geometry(f"+{self._offsetx}+{self._offsety}")
 
         # Bind mouse events

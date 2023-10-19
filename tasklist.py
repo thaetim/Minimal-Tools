@@ -2,6 +2,9 @@ import tkinter as tk
 from window import Win
 from tkinter import filedialog
 
+# Set window dimensions
+WINDOW_SIZE = "180x240"
+
 # Constants for colors
 BLACK = 'black'
 DARK_GRAY = '#1f1f1f'
@@ -210,8 +213,8 @@ def is_event_within_bbox(event, bbox, ignore_x=False):
 if __name__ == "__main__":
     # Prepare the app
     root = Win()
-    root.geometry("180x240")
-    root.configure(bg="black")
+    root.geometry(WINDOW_SIZE)
+    root.configure(bg=BLACK)
     app = TaskListApp(root)
 
     # Keep the app always in the foreground
