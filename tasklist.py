@@ -3,7 +3,8 @@ from window import Win
 from tkinter import filedialog
 
 # Set window dimensions
-WINDOW_SIZE = "180x240"
+WINDOW_WIDTH = 180
+WINDOW_HEIGHT = 240
 
 # Constants for colors
 BLACK = 'black'
@@ -212,8 +213,7 @@ def is_event_within_bbox(event, bbox, ignore_x=False):
 
 if __name__ == "__main__":
     # Prepare the app
-    root = Win()
-    root.geometry(WINDOW_SIZE)
+    root = Win(WINDOW_WIDTH, WINDOW_HEIGHT)
     root.configure(bg=BLACK)
     app = TaskListApp(root)
 

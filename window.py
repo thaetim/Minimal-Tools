@@ -7,22 +7,25 @@ class Win(tk.Tk):
 
     click_pos = (0, 0)
 
-    def __init__(self):
+    def __init__(self, window_width, window_height):
         """Initialize the window with specific settings and event bindings.
 
         This constructor sets up the window without window decorations, places it
         in the bottom right part of the screen, and binds mouse and keyboard events.
 
         """
-        super().__init()
+        super().__init__()
 
         # Disable window manager on the app's window
         super().overrideredirect(True)
 
         # Start the window in the bottom right part of the screen
-        self._offsetx = self.winfo_screenwidth() - self.winfo_width - 200
-        self._offsety = self.winfo_screenheight() - self.winfo_height - 200
-        super().geometry(f"+{self._offsetx}+{self._offsety}")
+        self._offsetx = self.winfo_screenwidth() - window_width - 200
+        self._offsety = self.winfo_screenheight() - window_height - 200
+
+        # Set window dimensions and position
+        super().geometry(f"{window_width}x{
+            window_height}+{self._offsetx}+{self._offsety}")
 
         # Bind mouse events
         super().bind("<Button-1>", self.clickwin)
@@ -68,7 +71,8 @@ class Win(tk.Tk):
             bool: True if the cursor has moved, False otherwise.
 
         """
-        return self.click_pos != (super().winfo_pointerx(), super().winfo_pointery())
+        return self.click_pos != (super().winfo_pointerx(),
+                                  super().winfo_pointery())
 
     def close(self, _=None):
         """Exit the application.
