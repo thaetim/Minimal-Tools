@@ -1,19 +1,19 @@
 # MINIMAL TOOLS
 
 ## Tasklist
-A simple dark-themed task list window. Always in the foreground.
+A simple dark-themed task list.
 
 ## Features and Usage
 
-- **Draggable and Always On Top**: The application window is draggable, allowing you to place it anywhere on your screen, and it always stays in the foreground for easy access to your tasks.
+- **Draggable & Always On Top**: The window is draggable, stays in the foreground.
 
-- **Add and Remove Tasks**: You can add new tasks to your list by typing in the input field and pressing Enter. To remove a task, simply double-click on it.
+- **Add & Remove Tasks**: Add tasks by typing and pressing Enter, double-click to remove.
 
-- **Task Completion**: Mark tasks as completed by clicking on them. Clicking on a completed task will mark it as incomplete.
+- **Task Completion**: Click to mark tasks complete or incomplete.
 
-- **Context Menu**: Right-click on the window to access a context menu with options to exit the application, and save and load your tasks to a text file.
+- **Context Menu**: Right-click for options: exit, save, load tasks.
 
-- **Close Application**: You can press the "Esc" key to quickly close the application.
+- **Quick Close**: Press "Esc" to exit.
 
 #### Requirements
 1. Install [Python 3](https://www.python.org/downloads/).
@@ -21,7 +21,7 @@ A simple dark-themed task list window. Always in the foreground.
 
         pip install tkinter
 
-#### If you want it run with a keyboard shortcut
+#### How to run with any keyboard shortcut
 1. Install [AutoHotkey v1](https://www.autohotkey.com/download/).
 2. Create and edit this *.ahk* script. Info about available [Hotkeys](https://www.autohotkey.com/docs/v1/Hotkeys.htm).
 
@@ -38,7 +38,7 @@ I recommend also adding the *.ahk* script to Windows' autostart:
 
 ## Customization
 
-You can customize the application by modifying the script. You can change the colors, window size, or add additional features according to your requirements.
+You can change the colors, window size, or add additional features by modifying the `tasklist.py` script.
 
 ## License
 
