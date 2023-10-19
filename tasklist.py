@@ -19,7 +19,10 @@ class TaskListApp:
         """
         self.root = root
         self.root.title("")
+
+        # Internal tasks array
         self.tasks = []
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -40,7 +43,7 @@ class TaskListApp:
         self.task_list.bind('<Double-Button-1>', self.delete_task)
         self.task_list.bind('<ButtonRelease-1>', self.toggle_done)
 
-        # Create a right-click context menu
+        # Create a right-click context menu and its options
         self.context_menu = tk.Menu(
             self.root, tearoff=0, bg=DARK_GRAY, fg=WHITE, relief='flat')
         self.context_menu.add_command(
@@ -87,14 +90,25 @@ class TaskListApp:
 
         # Listbox.nearest() returns -1 if the list is empty
         if nearest_item_index > -1:
+
+            # Get the bounding box of the task listbox item
             task_geometry = self.task_list.bbox(nearest_item_index)
+
+            # Check if the event (mouse click) happened on the task listbox item
             if task_geometry[2] and is_event_within_bbox(event, task_geometry, ignore_x=True):
+
+                # Prevent toggling of the task if the window has been just dragged
                 if not self.root.has_cursor_moved():
+
                     task = self.tasks[nearest_item_index]
+
+                    # Toggle the task completion prefix in the internal tasks array
                     if not task.startswith('✓ '):
                         self.tasks[nearest_item_index] = '✓ ' + task
                     else:
                         self.tasks[nearest_item_index] = task[2:]
+
+                    # Reflect the changes in the listbox
                     self.task_list.delete(nearest_item_index)
                     self.task_list.insert(nearest_item_index,
                                           self.tasks[nearest_item_index])
@@ -114,7 +128,7 @@ class TaskListApp:
             # Disable toggle event handling
             self.task_list.unbind("<ButtonRelease-1>")
 
-            # Delete the task item
+            # Delete the task item from the tasks array and the listbox
             self.tasks.pop(selected_index)
             self.task_list.delete(selected_index)
 
@@ -123,6 +137,7 @@ class TaskListApp:
 
     def enable_event_handling(self):
         """Re-enable event handling after a short delay."""
+
         # Re-enable event handling after a short delay
         self.task_list.bind('<ButtonRelease-1>', self.toggle_done)
 
@@ -137,6 +152,7 @@ class TaskListApp:
 
     def save_tasks(self):
         """Save tasks to a text file."""
+
         # Ask the user to select a file to save the tasks
         file_path = filedialog.asksaveasfilename(
             defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
@@ -151,6 +167,7 @@ class TaskListApp:
 
     def load_tasks(self):
         """Load tasks from a text file."""
+        
         # Ask the user to select a file to load tasks from
         file_path = filedialog.askopenfilename(
             filetypes=[("Text Files", "*.txt")])
